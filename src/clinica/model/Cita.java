@@ -10,11 +10,14 @@ import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -40,11 +43,22 @@ public class Cita implements Serializable {
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Id
     @Basic(optional = false)
-    //AGREGAR SECUENCIA, COMO LAS DEMÁS CLASES
+     @SequenceGenerator(
+        name = "CLI_CITA_ID_GENERATOR",
+        sequenceName = "SYSTEM.SEQ_CITA",
+        allocationSize = 1
+    )
+    @GeneratedValue(
+        strategy = GenerationType.SEQUENCE,
+        generator = "CLI_CITA_ID_GENERATOR"
+    )
     @Column(name = "CIT_ID", nullable = false, precision = 0, scale = -127)
     private Long citId;
+    //AGREGAR SECUENCIA, COMO LAS DEMÁS CLASES
+    @Column(name = "CIT_ID", nullable = false, precision = 0, scale = -127)
+    //private Long citId;
     @Basic(optional = false)
-    @Column(name = "CIT_FECHA", nullable = false)
+    //@Column(name = "CIT_FECHA", nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
     private Date citFecha;
     @Basic(optional = false)
