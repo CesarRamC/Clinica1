@@ -51,4 +51,8 @@ public static void showImage(AlertType tipo,String titulo,String mensaje) {
         Optional<ButtonType>result=alert.showAndWait();
         return result.get()==ButtonType.OK;
     }
+
+    public static void showAndWait(String validación, String tipo_de_usuario, String debe_seleccionar_Paciente_o_Médico) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
