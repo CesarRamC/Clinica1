@@ -89,7 +89,7 @@ public class RegistroController extends Controller implements Initializable {
 
     }
     
-    private boolean validarCampos() {
+    /*private boolean validarCampos() {
     String usuarioTxt         = txfUsuario.getText();
     String pass               = txfContrasena.getText();
     String nombre             = txfNombreCompleto.getText();
@@ -155,12 +155,12 @@ public class RegistroController extends Controller implements Initializable {
     }
 
     return true;
-}
+}*/
 
     @FXML
     private void onAction_Registrar(ActionEvent event) {
         
-        if (!validarCampos()) return;
+       // if (!validarCampos()) return;
         usuario = new Usuario();
         persona = new Persona();
   
@@ -173,7 +173,7 @@ public class RegistroController extends Controller implements Initializable {
         persona.setCliNombreCompleto(txfNombreCompleto.getText());
         persona.setCliCedula(txfCedula.getText());
         persona.setCliTelefono(txfTelefono.getText());
-        if(null == cbxGenero.getValue()){
+        /*if(null == cbxGenero.getValue()){
             persona.setCliGenero("O");
         }else switch (cbxGenero.getValue()) {
             case "Masculino":
@@ -185,7 +185,7 @@ public class RegistroController extends Controller implements Initializable {
             default:
                 persona.setCliGenero("O");
                 break;
-        }
+        }*/
         persona.setCliCorreoElectronico(txtCorreoElectronico.getText());
         LocalDate fecha =  txfAnioNacimiento.getValue();
         persona.setCliAnioNacimiento(Date.from(fecha.atStartOfDay(ZoneId.systemDefault()).toInstant()));
@@ -204,7 +204,7 @@ public class RegistroController extends Controller implements Initializable {
     }
     
      //Metodo para limpiar el formulario (TextFields)
-    private void limpiarFormulario() {
+    /*private void limpiarFormulario() {
    
     txfNombreCompleto.clear();
     txfCedula.clear();
@@ -220,6 +220,6 @@ public class RegistroController extends Controller implements Initializable {
 
     // Se coloca en el primer campo para registrar
     txfNombreCompleto.requestFocus();
-    }
+    }*/
 
 }

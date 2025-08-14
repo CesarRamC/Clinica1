@@ -28,7 +28,7 @@ public class CitaService {
         
     }
     
-     public Cita guardarCita(Cita cita) {
+     /*public Cita guardarCita(Cita cita) {
         try { 
             et = em.getTransaction();
             et.begin();
@@ -43,7 +43,7 @@ public class CitaService {
             Mensaje.show(Alert.AlertType.ERROR, "ERROR", "Ocurrió un error al registrar la cita.");
             return null;
         }
-    }
+    }*/
     
       public void buscarCitas(){
         try {
